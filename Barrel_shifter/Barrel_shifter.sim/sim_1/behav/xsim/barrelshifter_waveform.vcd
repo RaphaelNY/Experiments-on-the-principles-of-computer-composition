@@ -1,0 +1,110 @@
+$date
+   Tue Apr 30 12:02:27 2024
+$end
+
+$version
+  2023.2
+  $dumpfile ("barrelshifter_waveform.vcd") 
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module Barrel_shifter_test $end
+$var reg 32 ! shift_Data [31:0] $end
+$var reg 8 " shift_num [7:0] $end
+$var reg 1 # CF $end
+$var reg 3 $ shift_OP [2:0] $end
+$var wire 32 % shift_Result [31:0] $end
+$var wire 1 & Shift_Carry_out $end
+$scope module UUT $end
+$var wire 32 ' shift_Data [31:0] $end
+$var wire 8 ( shift_num [7:0] $end
+$var wire 1 ) CF $end
+$var wire 3 * shift_OP [2:0] $end
+$var reg 32 + shift_Result [31:0] $end
+$var reg 1 , Shift_Carry_out $end
+$var reg 32 - temp [31:0] $end
+$var reg 8 . result [7:0] $end
+$var integer 32 / i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+b10100101101001011010010110100101 !
+b0 "
+0#
+b0 $
+b10100101101001011010010110100101 %
+x&
+b10100101101001011010010110100101 '
+b0 (
+0)
+b0 *
+b10100101101001011010010110100101 +
+x,
+b10100101101001011010010110100101 -
+bx .
+b0 /
+$end
+
+#10000
+b1000 "
+b10100101101001011010010100000000 %
+1&
+b1000 (
+b10100101101001011010010100000000 +
+1,
+b10100101101001011010010100000000 -
+b1000 /
+
+#20000
+b100 "
+b10 $
+b1010010110100101101001011010 %
+0&
+b100 (
+b10 *
+b1010010110100101101001011010 +
+0,
+b1010010110100101101001011010 -
+b100 /
+
+#30000
+b1 "
+b100 $
+b11010010110100101101001011010010 %
+1&
+b1 (
+b100 *
+b11010010110100101101001011010010 +
+1,
+b11010010110100101101001011010010 -
+b1 /
+
+#40000
+b1000 "
+1#
+b110 $
+b10100101101001011010010110100101 %
+b1000 (
+1)
+b110 *
+b10100101101001011010010110100101 +
+b10100101101001011010010110100101 -
+b1000 .
+b1000 /
+
+#50000
+b100001 "
+b0 $
+b0 %
+0&
+b100001 (
+b0 *
+b0 +
+0,
+b0 -
