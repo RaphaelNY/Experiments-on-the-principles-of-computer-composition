@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Thu May  9 20:04:38 2024
+| Date         : Sat May 11 19:22:27 2024
 | Host         : Raphaetop running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Universal_Register_Heap_one_utilization_synth.rpt -pb Universal_Register_Heap_one_utilization_synth.pb
 | Design       : Universal_Register_Heap_one
@@ -34,8 +34,8 @@ Table of Contents
 | Slice LUTs*             |   97 |     0 |          0 |     41000 |  0.24 |
 |   LUT as Logic          |   97 |     0 |          0 |     41000 |  0.24 |
 |   LUT as Memory         |    0 |     0 |          0 |     13400 |  0.00 |
-| Slice Registers         |   66 |     0 |          0 |     82000 |  0.08 |
-|   Register as Flip Flop |   66 |     0 |          0 |     82000 |  0.08 |
+| Slice Registers         |  162 |     0 |          0 |     82000 |  0.20 |
+|   Register as Flip Flop |  162 |     0 |          0 |     82000 |  0.20 |
 |   Register as Latch     |    0 |     0 |          0 |     82000 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |     20500 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |     10250 |  0.00 |
@@ -59,7 +59,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 66    |          Yes |       Reset |            - |
+| 162   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -92,7 +92,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |  143 |     0 |          0 |       300 | 47.67 |
+| Bonded IOB                  |  144 |     0 |          0 |       300 | 48.00 |
 | Bonded IPADs                |    0 |     0 |          0 |        26 |  0.00 |
 | Bonded OPADs                |    0 |     0 |          0 |        16 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         6 |  0.00 |
@@ -153,12 +153,12 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
+| FDRE     |  162 |        Flop & Latch |
 | OBUF     |   96 |                  IO |
 | LUT6     |   96 |                 LUT |
-| FDRE     |   66 |        Flop & Latch |
-| IBUF     |   47 |                  IO |
+| IBUF     |   48 |                  IO |
 | BUFG     |    3 |               Clock |
-| LUT2     |    2 |                 LUT |
+| LUT3     |    2 |                 LUT |
 +----------+------+---------------------+
 
 

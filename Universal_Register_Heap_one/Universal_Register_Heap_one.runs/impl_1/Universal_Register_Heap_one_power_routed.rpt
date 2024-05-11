@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Thu May  9 20:05:49 2024
+| Date             : Sat May 11 19:23:10 2024
 | Host             : Raphaetop running 64-bit major release  (build 9200)
 | Command          : report_power -file Universal_Register_Heap_one_power_routed.rpt -pb Universal_Register_Heap_one_power_summary_routed.pb -rpx Universal_Register_Heap_one_power_routed.rpx
 | Design           : Universal_Register_Heap_one
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 12.089       |
+| Total On-Chip Power (W)  | 11.984       |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 11.971       |
-| Device Static (W)        | 0.118        |
+| Dynamic (W)              | 11.867       |
+| Device Static (W)        | 0.117        |
 | Effective TJA (C/W)      | 1.9          |
-| Max Ambient (C)          | 62.2         |
-| Junction Temperature (C) | 47.8         |
+| Max Ambient (C)          | 62.4         |
+| Junction Temperature (C) | 47.6         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.330 |      173 |       --- |             --- |
-|   LUT as Logic |     0.295 |       97 |     41000 |            0.24 |
-|   Register     |     0.019 |       66 |     82000 |            0.08 |
-|   BUFG         |     0.017 |        3 |        32 |            9.38 |
-|   Others       |     0.000 |        6 |       --- |             --- |
-| Signals        |     1.302 |      212 |       --- |             --- |
-| I/O            |    10.339 |      143 |       300 |           47.67 |
-| Static Power   |     0.118 |          |           |                 |
-| Total          |    12.089 |          |           |                 |
+| Slice Logic    |     0.340 |      267 |       --- |             --- |
+|   LUT as Logic |     0.296 |       97 |     41000 |            0.24 |
+|   Register     |     0.030 |      162 |     82000 |            0.20 |
+|   BUFG         |     0.013 |        3 |        32 |            9.38 |
+|   Others       |     0.000 |        4 |       --- |             --- |
+| Signals        |     1.188 |      213 |       --- |             --- |
+| I/O            |    10.339 |      144 |       300 |           48.00 |
+| Static Power   |     0.117 |          |           |                 |
+| Total          |    11.984 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,7 +70,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.876 |       1.821 |      0.055 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     1.771 |       1.716 |      0.055 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.844 |       0.831 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -138,9 +138,9 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| Universal_Register_Heap_one |    11.971 |
-|   R0                        |     0.613 |
-|   R1                        |     0.292 |
+| Universal_Register_Heap_one |    11.867 |
+|   R0                        |     0.284 |
+|   R1                        |     0.181 |
 +-----------------------------+-----------+
 
 
