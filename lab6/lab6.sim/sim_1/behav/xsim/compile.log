@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/lab6/lab6.gen/sources_1/ip/ROM_B/sim/ROM_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ROM_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/lab6/lab6.srcs/sim_1/new/test_ROM_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_ROM_B
