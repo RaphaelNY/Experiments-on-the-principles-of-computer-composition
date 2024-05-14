@@ -1,0 +1,8 @@
+0.7
+2020.2
+Oct 13 2023
+20:47:58
+E:/Experiments-on-the-principles-of-computer-composition/lab7/lab7.gen/sources_1/ip/Inst_addr/sim/Inst_addr.v,1715673508,verilog,,E:/Experiments-on-the-principles-of-computer-composition/lab7/lab7.srcs/sources_1/new/command_module.v,,Inst_addr,,,,,,,,
+E:/Experiments-on-the-principles-of-computer-composition/lab7/lab7.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
+E:/Experiments-on-the-principles-of-computer-composition/lab7/lab7.srcs/sim_1/new/command_module_tb.v,1715686012,verilog,,,,command_module_tb,,,,,,,,
+E:/Experiments-on-the-principles-of-computer-composition/lab7/lab7.srcs/sources_1/new/command_module.v,1715685551,verilog,,E:/Experiments-on-the-principles-of-computer-composition/lab7/lab7.srcs/sim_1/new/command_module_tb.v,,ADD_model;IR_func;Reg_PC;command_module;justice,,,,,,,,
