@@ -34,7 +34,7 @@ module barrelshifter32(
     always @ (shift_Data or shift_num or CF or shift_OP) begin
         temp = shift_Data;
         case (shift_OP)
-            3'b000, 3'b001://Âß¼­×óÒÆ
+            3'b000, 3'b001://ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½
             if (shift_num > 32) begin
             temp = 0;
             end else begin
@@ -43,7 +43,7 @@ module barrelshifter32(
                 end
             end
              
-            3'b010,3'b011:begin // Âß¼­ÓÒÒÆ
+            3'b010,3'b011:begin // ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½
                 for (i = 0; i < shift_num; i = i + 1) begin
                     temp = {1'b0, temp[31:1]};
                 end
@@ -52,7 +52,7 @@ module barrelshifter32(
                 end
             end
             
-            3'b100,3'b101:begin // ËãÊõÓÒÒÆ
+            3'b100,3'b101:begin // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 if (shift_num == 0 && shift_OP[0] == 1'b0 || shift_num >32) begin
                     temp = {32{temp[31]}};
                 end else begin
@@ -62,7 +62,7 @@ module barrelshifter32(
                 end
             end
             
-            3'b110,3'b111:begin // Ñ­»·ÓÒÒÆ
+            3'b110,3'b111:begin // Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 if (shift_num ==0 && shift_OP[0] ==1'b0)begin
                     temp = {CF,temp[31:1]};
                 end else begin
@@ -72,7 +72,7 @@ module barrelshifter32(
                     end
                 end
             end
-            default: temp = shift_Data; // Î´¶¨Òå²Ù×÷
+            default: temp = shift_Data; // Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         endcase
         
         shift_Result = temp;
@@ -85,7 +85,7 @@ module barrelshifter32(
                     Shift_Carry_out = shift_Data[32-shift_num];
                 end
             3'b010,3'b011:
-            if (shift_OP == 0 && shift_num == 0) begin
+            if (shift_OP[0] == 0 && shift_num == 0) begin
                 Shift_Carry_out = shift_Data[31];
             end else begin
                 if (shift_num >32 ) begin 
@@ -96,7 +96,7 @@ module barrelshifter32(
             end
             
             3'b100,3'b101:
-            if (shift_OP == 0 && shift_num == 0) begin
+            if (shift_OP[0] == 0 && shift_num == 0) begin
                 Shift_Carry_out = shift_Data[31];
             end else begin
                 if (shift_num >= 32 ) begin 
@@ -107,7 +107,7 @@ module barrelshifter32(
             end
             
             3'b110,3'b111:
-            if (shift_OP == 0 && shift_num == 0) begin
+            if (shift_OP[0] == 0 && shift_num == 0) begin
                 Shift_Carry_out = shift_Data[0];
             end else begin
                 if (shift_num > 32 ) begin 
