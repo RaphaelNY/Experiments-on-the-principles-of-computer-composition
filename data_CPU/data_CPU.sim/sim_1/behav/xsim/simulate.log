@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_data_CPU.uut.inst_addr.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+$stop called at time : 210 ns : File "E:/Experiments-on-the-principles-of-computer-composition/data_CPU/data_CPU.srcs/sim_1/new/tb_data_CPU.v" Line 76
