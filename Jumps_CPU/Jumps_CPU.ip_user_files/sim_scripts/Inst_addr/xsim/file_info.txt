@@ -1,0 +1,2 @@
+Inst_addr.v,verilog,xil_defaultlib,../../../../Jumps_CPU.gen/sources_1/ip/Inst_addr/sim/Inst_addr.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v
