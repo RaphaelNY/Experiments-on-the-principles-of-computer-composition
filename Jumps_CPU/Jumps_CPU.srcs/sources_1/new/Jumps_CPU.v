@@ -25,7 +25,6 @@ module Jumps_CPU(
         input Rst_Heaps,
         input Rst_IR,
         input Rst_PC,
-        input Write_PC,
         input LA,
         input LB,
         input LC,
@@ -36,10 +35,12 @@ module Jumps_CPU(
     );
 
     wire [31:0] PC_New;
+    wire [31:0] ADD_PC;
     wire [31:0] PC_out;
     wire [31:0] M_R_Data;
     wire justice_out;
     wire Write_IR;
+    wire Write_PC;
     wire [1:0] type_6_5;
     wire [4:0] imm5;
     wire [7:0] imm5_0;
@@ -47,9 +48,7 @@ module Jumps_CPU(
     wire [31:0] imm12_7_0_0;
     wire [7:0] imm12_11_8_0;
     wire [1:0] DP;
-    wire [1:0] MRS;
-    wire [3:0] MASK;
-    wire R;
+    wire [1:0] BXL;
     // wire [2:0] IR_27_25;
     wire [3:0] OP_24_21;
     wire [3:0] R_Addr_A;
@@ -70,20 +69,22 @@ module Jumps_CPU(
     wire [31:0] F;
     wire [31:0] shift_Result;
     wire shift_Carry_out;
-    wire [3:0] ALU_NZCV;
-    wire [3:0] NZCV;
-    wire W_Rdata_s;
-    wire rm_shift_s;
-    wire CPSR_SPSR_s;
-    wire [3:0] MASK_out;
-    wire [31:0] CPSR_or_SPSR;
-    // wire W_SPSR_s;
-    // wire W_CPSR_s;
+    wire [3:0] NZCV_result;
+    wire [1:0] PC_s;
+    wire [3:0] rd;
+    wire rd_s;
+    wire [24:0] imm24;
+    wire [31:0] A_ALU;
+    wire [31:0] B_ALU;
+    wire ALU_A_s;
+    wire ALU_B_s;
+    wire [31:0] imm24_23_0;
+    
     
     
     ADD_model ADD(
         .A(PC_out),
-        .C(PC_New)
+        .C(ADD_PC)
     );
  
     Reg_PC R_PC(
@@ -112,11 +113,11 @@ module Jumps_CPU(
         .Rst(Rst_IR),
         .Und_Ins(Und_Ins),
         .DP(DP),
-        .MRS(MRS),
+        .BXL(BXL),
         .OP(OP_24_21),
         // .IR_27_25(IR_27_25),
         // .S(S),
-        .rd(W_Addr),
+        .rd(rd),
         .rn(R_Addr_A),
         .rs(R_Addr_C),
         .rm(R_Addr_B),
@@ -125,13 +126,12 @@ module Jumps_CPU(
         // .IR_8(IR_8),
         .imm5(imm5),
         .imm12(imm12),
-        .R(R),
-        .MASK(MASK)
+        .imm24(imm24)
     );
 
     control_mode control_mode_0(
         .DP(DP),
-        .MRS(MRS),
+        .BXL(BXL),
         // .S(S),
         // .IR_27_25(IR_27_25),
         .OP(OP_24_21),
@@ -139,21 +139,20 @@ module Jumps_CPU(
         .type(type_6_5),
         // .IR_4(IR_4),
         .justice_out(justice_out),
-        .R(R),
-        .MASK(MASK),
 
         .Write_IR(Write_IR),
+        .Write_PC(Write_PC),
         .Write_Reg(Write_Reg),
         .rm_imm_s(rm_imm_s),
         .rs_imm_s(rs_imm_s),
         .shift_OP(shift_OP),
         .ALU_OP(ALU_OP),
-        .W_Rdata_s(W_Rdata_s),
-        .rm_shift_s(rm_shift_s),
-        .CPSR_SPSR_s(CPSR_SPSR_s),
-        .MASK_out(MASK_out)
+        .PC_s(PC_s),
+        .rd_s(rd_s),
+        .ALU_A_s(ALU_A_s),
+        .ALU_B_s(ALU_B_s)
     );
-
+    
     // Instantiate the module to be tested
     Universal_Register_Heap_one dut (
         .R_Addr_A(R_Addr_A),
@@ -172,26 +171,11 @@ module Jumps_CPU(
         .R_Data_C(R_Data_C)
     );
 
-    select_2_1 select_2_1_0(
-        .D0(R_Data_B),
-        .D1(imm12_7_0_0),
-        .rm_imm_s(rm_imm_s),
-        .F(shift_Data)
-    );
-
-    select_3_1 select_3_1_0(
-        .D0(imm5_0),
-        .D1(R_Data_C[7:0]),
-        .D2(imm12_11_8_0),
-        .rs_imm_s(rs_imm_s),
-        .F(shift_num)
-    );
-
     // Instantiate barrel shifter
     barrelshifter32 u_barrelshifter32 (
         .shift_Data(shift_Data),
         .shift_num(shift_num),
-        .CF(NZCV[1]), // cf connect from ALU
+        .CF(NZCV_result[1]), // cf connect from ALU
         .shift_OP(shift_OP), // input end there
         .shift_Result(shift_Result),
         .Shift_Carry_out(shift_Carry_out)
@@ -199,32 +183,17 @@ module Jumps_CPU(
 
     // Instantiate ALU
     ALU u_ALU (
-        .A(R_Data_A),
-        .B(shift_Result), // Use shift output as B input to ALU
+        .A(A_ALU),
+        .B(B_ALU), // Use shift output as B input to ALU
         .ALU_OP(ALU_OP),
-        .CF(NZCV[1]), // Connect carry flag from barrel shifter to ALU
-        .VF(NZCV[0]), // Adjust VF as needed
+        .CF(NZCV_result[1]), // Connect carry flag from barrel shifter to ALU
+        .VF(NZCV_result[0]), // Adjust VF as needed
         .shiftCout(shift_Carry_out),
-        // .NZCV_S(LS), // input end there
+        .NZCV_S(LS), // input end there
         .LF(LF),
         .F(F),
-        .NZCV(ALU_NZCV)
+        .NZCV(NZCV_result)
     );
-
-    CPSR_mode CPSR_mode_0(
-        .ALU_NZCV(ALU_NZCV),
-        .MASK(MASK_out),
-        .NZCV_S(LS),
-        .B(R_Data_B),
-        .Shift_out(shift_Result),
-        .rm_shift_s(rm_shift_s),
-        .CPSR_SPSR_s(CPSR_SPSR_s),
-        .W_SPSR_s(1),
-        .W_CPSR_s(0),
-        .NZCV(NZCV),
-        .CPSR_or_SPSR(CPSR_or_SPSR)
-    );
-
 
     imm12_8_32 imm12_8_32_0(
         .imm12_7_0(imm12[7:0]),
@@ -240,11 +209,59 @@ module Jumps_CPU(
         .imm5(imm5),
         .imm5_0(imm5_0)
     );
+
+    imm24_24_32 imm24_24_32_0(
+        .imm24(imm24),
+        .imm24_23_0(imm24_23_0)
+    );
+
+    select_2_1 select_2_1_0(
+        .D0(R_Data_B),
+        .D1(imm12_7_0_0),
+        .rm_imm_s(rm_imm_s),
+        .F(shift_Data)
+    );
+
+    select_3_1 select_3_1_0(
+        .D0(imm5_0),
+        .D1(R_Data_C[7:0]),
+        .D2(imm12_11_8_0),
+        .rs_imm_s(rs_imm_s),
+        .F(shift_num)
+    );
+
+    PC_3_1 PC_3_1_0(
+        .F_in(F),
+        .B_in(R_Data_B),
+        .ADD_in(ADD_PC),
+        .PC_s(PC_s),
+        .PC_New(PC_New)
+    );
+
+    A_2_1 A_2_1_0(
+        .PC_in(PC_out),
+        .A_in(R_Data_A),
+        .ALU_A_s(ALU_A_s),
+        .A_out(A_ALU)
+    );
+
+    B_2_1 B_2_1_0(
+        .shift_result(shift_Result),
+        .imm24_23_0(imm24_23_0),
+        .ALU_B_s(ALU_B_s),
+        .B_ALU(B_ALU)
+    );
+
+    rd_2_1 rd_2_1_0(
+        .rd_in(rd),
+        .rd_s(rd_s),
+        .rd_out(W_Addr)
+    );
 endmodule
 
 module control_mode(
         input [1:0] DP,
-        input [1:0] MRS,
+        input [1:0] BXL,
         // input S, // 20
         // input [2:0] IR_27_25, // 27-25
         input [3:0] OP, // 24-21
@@ -252,19 +269,18 @@ module control_mode(
         input [1:0] type, // 6-5
         // input IR_4, // 4
         input justice_out,
-        input R,
-        input [3:0] MASK,
 
         output reg Write_IR,
+        output reg Write_PC,
         output reg Write_Reg,
         output reg rm_imm_s,
         output reg [1:0] rs_imm_s,
         output reg [2:0] shift_OP,
         output reg [3:0] ALU_OP,
-        output reg W_Rdata_s,
-        output reg rm_shift_s,
-        output reg CPSR_SPSR_s,
-        output reg [3:0] MASK_out
+        output reg [1:0] PC_s,
+        output reg rd_s,
+        output reg ALU_A_s,
+        output reg ALU_B_s
     );
     
     always @(*)begin
@@ -282,30 +298,33 @@ module control_mode(
             Write_IR = ~justice_out;
             Write_Reg = justice_out;
         end
-
-        W_Rdata_s = 0;
-
-        if (MRS != 2'b11) begin
-            MASK_out = MASK;
-            case(MRS)
-                2'b00:begin
-                    W_Rdata_s = 1;
-                    CPSR_SPSR_s = R;
-                    Write_Reg = 1;
+        PC_s = 2'b10;
+        if (BXL != 2'b11) begin
+            case (BXL)
+                2'b00:begin // BX
+                    PC_s = 2'b01;
+                    Write_PC = 1;
                 end
-                2'b01:begin
-                    rm_shift_s = 1;
-                    CPSR_SPSR_s = R;
-                end
+                2'b01:begin // B
+                    ALU_A_s = 1;
+                    ALU_B_s = 1;
+                    ALU_OP = 4'b0100;
+                    PC_s = 2'b01;
+                    Write_PC = 1;
+                end // BL
                 2'b10:begin
-                    rm_shift_s = 0;
-                    CPSR_SPSR_s = R;
-                    rm_imm_s =1;
-                    rs_imm_s =10;
-                    shift_OP = 3'b111;
+                    ALU_A_s = 1;
+                    ALU_OP = 4'b1100;
+                    rd_s = 1;
+                    Write_Reg = 1;
+                    ALU_A_s = 1;
+                    ALU_B_s = 1;
+                    ALU_OP = 4'b0100;
+                    PC_s = 2'b01;
+                    Write_PC = 1;
                 end
             endcase
-        end 
+        end
     end
 
 endmodule
@@ -360,31 +379,55 @@ module imm5_5_8(
     assign imm5_0 = {3'b0, imm5};
 endmodule
 
-module CPSR_mode(
-    input [3:0] ALU_NZCV,
-    input [3:0] MASK,
-    input NZCV_S,
-    input [31:0] B,
-    input [31:0] Shift_out,
-    input rm_shift_s,
-    input CPSR_SPSR_s,
-    input W_SPSR_s,
-    input W_CPSR_s,
-    
-    output [3:0] NZCV,
-    output [31:0] CPSR_or_SPSR
-    
+module imm24_24_32(
+        input [23:0] imm24,
+        output [31:0] imm24_23_0
     );
-    
-    reg [31:0] CPSR;
-    reg [31:0] SPSR;
-    wire [31:0] rm_shift;
-    wire Write_SPSR;
-    wire Write_CPSR;
+    assign imm24_23_0 = {6'b0, imm24_23_0, 2'b00};
+endmodule
 
-    assign Write_CPSR = ~CPSR_SPSR_s;
-    assign Write_SPSR = CPSR_SPSR_s;
-    assign rm_shift = rm_shift_s ? B : Shift_out;
-    assign CPSR_or_SPSR = CPSR_SPSR_s ? SPSR : CPSR;
+module PC_3_1 ( 
+    input [31:0] F_in,
+    input [31:0] B_in,
+    input [31:0] ADD_in,
+    input [1:0] PC_s,
 
+    output reg [31:0] PC_New
+    );
+
+    always @(*)begin
+        case(PC_s)
+            2'b00: PC_New = ADD_in;
+            2'b01: PC_New = B_in;
+            2'b10: PC_New = F_in;
+        endcase
+    end
+endmodule
+
+module rd_2_1 (
+    input [3:0] rd_in,
+    input rd_s,
+    output [3:0] rd_out
+    );
+    assign rd_out = rd_s?4'b1110 : rd_in;
+endmodule
+
+module A_2_1 (
+    input [31:0] PC_in,
+    input [31:0] A_in,
+    input ALU_A_s, // BL: 1
+
+    output [31:0] A_out
+    );
+    assign A_out = ALU_A_s ? PC_in: A_in;
+endmodule
+
+module B_2_1 (
+    input [31:0] shift_result,
+    input [31:0] imm24_23_0,
+    input ALU_B_s,
+
+    output [31:0] B_ALU
+    );
+    assign B_ALU = ALU_B_s? imm24_23_0 : shift_result;
 endmodule

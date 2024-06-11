@@ -52,27 +52,12 @@ initial begin
     Rst_Heaps = 0;
     Rst_IR = 0;
     Rst_PC = 0;
-    
-    // Test case 1: Simple operation
+
     #10 Write_PC = 1;
     
-    // Test case 2: Enable load signals on negedge
-    // #30 LA = 0; // negedge trigger
-    // #30 LB = 0; // negedge trigger
-    // #30 LC = 0; // negedge trigger
-    // #40 LA = 1; LB = 1; LC = 1; // Return to high state
 
-    // Test case 3: Set flags and check Und_Ins output
-    // #50 LS = 0; // negedge trigger
-    // #50 LF = 0; // negedge trigger
-    // #60 LS = 1; LF = 1; // Return to high state
-
-    // Add more test cases as needed
-
-    // Wait some time for observation
     #100;
     
-    // Finish simulation
     $stop;
 end
 

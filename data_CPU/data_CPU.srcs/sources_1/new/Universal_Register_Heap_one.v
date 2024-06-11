@@ -42,12 +42,12 @@ module Universal_Register_Heap_one(
     integer i;
     wire [14:0] clk;
     wire [31:0] Q_R[14:0];
-    wire [15:0] Decoded_Output;
 
     Decoder_4to16 Decoder_inst (
         .clk(clk_),
         .W_Addr(W_Addr),
-        .Decoded_Output(Decoded_Output)
+        .Write_Reg(Write_Reg),
+        .Decoded_Output(clk)
     );
 
     Register R0 (.clk(clk[0]), .Rst(Rst), .D(W_Data), .Q(Q_R[0]));
@@ -66,7 +66,7 @@ module Universal_Register_Heap_one(
     Register R13 (.clk(clk[13]), .Rst(Rst), .D(W_Data), .Q(Q_R[13]));
     Register R14 (.clk(clk[14]), .Rst(Rst), .D(W_Data), .Q(Q_R[14]));
     
-    assign clk = clk_ & Decoded_Output & Write_Reg;
+    // assign clk = clk_ & Decoded_Output & Write_Reg;
 
     always @(negedge LA) begin
         if (LA == 1'b0) begin       
@@ -90,12 +90,13 @@ endmodule
 module Decoder_4to16 (
         input clk,
         input [3:0] W_Addr,
-        output reg [15:0] Decoded_Output
+        input Write_Reg,
+        output reg [14:0] Decoded_Output
     );
 
     always @(*) begin
-        Decoded_Output = 16'b0;
-        Decoded_Output[W_Addr] = 1'b1;
+        Decoded_Output = 15'b0;
+        Decoded_Output[W_Addr] = clk & 1'b1 & Write_Reg;        
         end
 endmodule
 

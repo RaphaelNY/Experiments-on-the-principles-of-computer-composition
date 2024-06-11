@@ -27,7 +27,7 @@ module ALU(
     input CF, // C
     input VF,
     input shiftCout, // shift carry out
-    //input NZCV_S,
+    input NZCV_S,
     input LF,
     output reg [31:0] F,
     output reg [3:0] NZCV

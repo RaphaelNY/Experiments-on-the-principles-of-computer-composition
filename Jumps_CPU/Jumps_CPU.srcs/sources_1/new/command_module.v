@@ -81,7 +81,7 @@ module IR_func(
 
         output reg Und_Ins,
         output reg [1:0] DP,
-        output reg [1:0] MRS,
+        output reg [1:0] BXL,
         output reg [3:0] OP, // 24:21
         // output reg [2:0] IR_27_25, // 27:25
         // output reg S,
@@ -94,8 +94,7 @@ module IR_func(
         // output reg IR_8,
         output reg [4:0] imm5,
         output reg [11:0] imm12,
-        output reg R,
-        output reg [3:0] MASK
+        output reg [23:0] imm24
     );
 
     // always @(negedge Write_IR) begin
@@ -107,30 +106,22 @@ module IR_func(
         if (Write_IR == 0) begin
             Und_Ins = 1'b1;
             DP = 2'b11;
-            MRS = 2'b11;
-            case(M_R_Data[27:23])
-                5'b00010:
-                    if (M_R_Data[21:20] == 2'b00 && M_R_Data[19:16] == 4'b1111 && M_R_Data[11:0] == 0) begin // MRS
-                        Und_Ins = 1'b0;
-                        MRS = 2'b00;
-                        R = M_R_Data[22];
-                        rd = M_R_Data[15:12];
-                    end else if (M_R_Data[21:20] == 2'b10 && M_R_Data[15:12] == 4'b1111 && M_R_Data[11:4] == 0) begin // MSR0
-                        Und_Ins = 1'b0;
-                        MRS = 2'b01;
-                        R = M_R_Data[22];
-                        MASK = M_R_Data[19:16];
+            BXL = 2'b11;
+            case (M_R_Data[27:24])
+                4'b0001: // BX
+                    if (M_R_Data[23:4] == 20'b00101111111111110001) begin
                         rm = M_R_Data[3:0];
+                        BXL = 2'b00;
                     end
-                5'b00110:
-                    if (M_R_Data[21:20] ==2'b10 && M_R_Data[15:12] == 4'b1111) begin // MSR1
-                        Und_Ins = 1'b0;
-                        MRS = 2'b10;
-                        R = M_R_Data[22];
-                        MASK = M_R_Data[19:16];
-                        imm12 = M_R_Data[11:0];
-                    end
-                default:
+                4'b1010:begin // B
+                    imm24 = M_R_Data[23:0];
+                    BXL = 2'b01;
+                end
+                4'b1011:begin // BL
+                    imm24 = M_R_Data[23:0];
+                    BXL = 2'b10;
+                end
+                default: begin
                     case (M_R_Data[15:12]) // DP
                         4'b1111: Und_Ins = 1'b1;
                         default: begin
@@ -187,7 +178,9 @@ module IR_func(
                             endcase
                         end
                     endcase
+                end
             endcase
+                
         end
         end
     end

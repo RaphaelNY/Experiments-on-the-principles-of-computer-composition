@@ -1,0 +1,7 @@
+ROM_B:
+memory_initialization_radix=16;
+memory_initialization_vector=e3a0003c,e3a01004,e3a05000,e7a01001,e3a02002,e3a03014,e0533212,e5803004,2afffffd,e4901004,e7905005,e1016090;
+
+RAM_B:
+memory_initialization_radix=16;
+memory_initialization_vector=88888888,99999999,00010fff,20006789,FFFF0000,0000FFFF,88888888,99999999,aaaaaaaa,bbbbbbbb,00000820,00632020,00010fff,20006789,FFFF0000,0000FFFF;

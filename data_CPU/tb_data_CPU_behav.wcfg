@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="62.400 ns"></ZoomStartTime>
-      <ZoomEndTime time="242.601 ns"></ZoomEndTime>
-      <Cursor1Time time="107.600 ns"></Cursor1Time>
+      <ZoomStartTime time="89.208 ns"></ZoomStartTime>
+      <ZoomEndTime time="213.609 ns"></ZoomEndTime>
+      <Cursor1Time time="118.008 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="244"></NameColumnWidth>
-      <ValueColumnWidth column_width="169"></ValueColumnWidth>
+      <ValueColumnWidth column_width="165"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="15" />
    <wvobject fp_name="/tb_data_CPU/clk" type="logic">
@@ -74,7 +74,6 @@
    <wvobject fp_name="group325" type="group">
       <obj_property name="label">ALU</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_data_CPU/uut/u_ALU/A" type="array">
          <obj_property name="ElementShortName">A[31:0]</obj_property>
          <obj_property name="ObjectShortName">A[31:0]</obj_property>
@@ -237,6 +236,7 @@
    <wvobject fp_name="group262" type="group">
       <obj_property name="label">dut</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_data_CPU/uut/dut/R_Addr_A" type="array">
          <obj_property name="ElementShortName">R_Addr_A[3:0]</obj_property>
          <obj_property name="ObjectShortName">R_Addr_A[3:0]</obj_property>
@@ -309,11 +309,6 @@
       <wvobject fp_name="/tb_data_CPU/uut/dut/Q_R" type="array">
          <obj_property name="ElementShortName">Q_R[14:0][31:0]</obj_property>
          <obj_property name="ObjectShortName">Q_R[14:0][31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_data_CPU/uut/dut/Decoded_Output" type="array">
-         <obj_property name="ElementShortName">Decoded_Output[15:0]</obj_property>
-         <obj_property name="ObjectShortName">Decoded_Output[15:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group281" type="group">

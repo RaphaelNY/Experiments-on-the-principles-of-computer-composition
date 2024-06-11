@@ -1,0 +1,12 @@
+0.7
+2020.2
+Oct 13 2023
+20:47:58
+E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.gen/sources_1/ip/Inst_addr/sim/Inst_addr.v,1717066850,verilog,,E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/ALU.v,,Inst_addr,,,,,,,,
+E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
+E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sim_1/new/tb_Jump_CPU.v,1718005530,verilog,,,,tb_Jump_CPU,,,,,,,,
+E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/ALU.v,1717469557,verilog,,E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/Barrel_shifter.v,,ALU,,,,,,,,
+E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/Barrel_shifter.v,1717058236,verilog,,E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/Jumps_CPU.v,,barrelshifter32,,,,,,,,
+E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/Jumps_CPU.v,1718004154,verilog,,E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/Universal_Register_Heap_one.v,,A_2_1;B_2_1;Jumps_CPU;PC_3_1;control_mode;imm12_4_8;imm12_8_32;imm24_24_32;imm5_5_8;rd_2_1;select_2_1;select_3_1,,,,,,,,
+E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/Universal_Register_Heap_one.v,1716867354,verilog,,E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/command_module.v,,Decoder_4to16;Register;Universal_Register_Heap_one,,,,,,,,
+E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/command_module.v,1717471654,verilog,,E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sim_1/new/tb_Jump_CPU.v,,ADD_model;IR_func;Reg_PC;justice,,,,,,,,

@@ -1,0 +1,30 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.gen/sources_1/ip/Inst_addr/sim/Inst_addr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Inst_addr
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/Barrel_shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module barrelshifter32
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/Jumps_CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Jumps_CPU
+INFO: [VRFC 10-311] analyzing module control_mode
+INFO: [VRFC 10-311] analyzing module select_2_1
+INFO: [VRFC 10-311] analyzing module select_3_1
+INFO: [VRFC 10-311] analyzing module imm12_8_32
+INFO: [VRFC 10-311] analyzing module imm12_4_8
+INFO: [VRFC 10-311] analyzing module imm5_5_8
+INFO: [VRFC 10-311] analyzing module imm24_24_32
+INFO: [VRFC 10-311] analyzing module PC_3_1
+INFO: [VRFC 10-311] analyzing module rd_2_1
+INFO: [VRFC 10-311] analyzing module A_2_1
+INFO: [VRFC 10-311] analyzing module B_2_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/Universal_Register_Heap_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Universal_Register_Heap_one
+INFO: [VRFC 10-311] analyzing module Decoder_4to16
+INFO: [VRFC 10-311] analyzing module Register
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sources_1/new/command_module.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ADD_model
+INFO: [VRFC 10-311] analyzing module Reg_PC
+INFO: [VRFC 10-311] analyzing module justice
+INFO: [VRFC 10-311] analyzing module IR_func
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/Jumps_CPU/Jumps_CPU.srcs/sim_1/new/tb_Jump_CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_Jump_CPU
