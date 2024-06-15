@@ -305,11 +305,17 @@ module control_mode_HDL(
     end
 
     always @(*) begin 
+        Next_ST = Idle;
         case (ST)
             Idle: Next_ST = S0;
             S0: Next_ST = isCondSatisfy ? S1 : S0; 
             S1: Next_ST = S2;
-            S2: Next_ST = S3;
+            S2: begin
+                if (OP == 4'b1000 || OP == 4'b1001 || OP == 4'b1010 || OP == 4'b1011)
+                    Next_ST = S0;
+                else
+                    Next_ST = S3;
+            end
             S3: Next_ST = S0;
             default: Next_ST = S0;
         endcase
@@ -367,4 +373,3 @@ module control_mode_HDL(
     end
 
 endmodule
-

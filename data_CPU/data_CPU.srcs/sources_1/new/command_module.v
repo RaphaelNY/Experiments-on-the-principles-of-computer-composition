@@ -19,64 +19,6 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-/*
-module command_module(
-    input clk,    // Clock input
-    input Write_PC, // Write_PC
-    input Rst,
-    input [3:0] NZCV,
-    input Write_IR,
-    
-    output reg [31:0] PC_OUT,
-    output reg [27:0] IR_OUT
-    );
-
-    wire [31:0] PC_New;
-    wire [31:0] PC_out;
-    wire [31:0] M_R_Data; // M_R_Data
-    wire Y;
-    wire [27:0] IR;
-
-    ADD_model ADD(
-        .A(PC_out),
-        .C(PC_New)
-    );
- 
-    Reg_PC R_PC(
-        .clk(clk),    // Clock input
-        .Write_PC(Write_PC), // Write_PC
-        .Rst(Rst),
-        .PC_New(PC_New),
-        .PC(PC_out)
-    );
-
-    Inst_addr inst_addr(
-        .clka(clk),    // Clock input
-        .addra(PC_out[7:2]),// Address input
-        .douta(M_R_Data) // Data output
-    );
-
-    justice justice_addr(
-        .NZCV(NZCV), // N3 Z2 C1 V0 
-        .I_a_out(M_R_Data[31:28]),
-        .Y(Y)
-    );
-
-    IR_func IR_fun(
-        .clk(clk),
-        .Write_IR(Write_IR),
-        .Y(Y),
-        .M_R_Data(M_R_Data[27:0]),
-        .Rst(Rst),
-        .IR(IR)
-    );
-    
-    always @(PC_out or IR) begin
-        PC_OUT = PC_out;
-        IR_OUT = IR;
-    end
-endmodule
-*/
 
 module ADD_model(
     input [31:0] A,
@@ -95,7 +37,7 @@ module Reg_PC(
     output reg [31:0] PC
     );
 
-    always @(negedge clk) begin 
+    always @(Rst or negedge clk) begin 
         if (Write_PC) begin 
             PC = PC_New;
         end
@@ -155,9 +97,7 @@ module IR_func(
         output reg [11:0] imm12
     );
 
-    // always @(negedge Write_IR) begin
     always @(negedge clk) begin
-    // always @(*) begin
     if (Rst)begin 
         Und_Ins = 1'b1;
         DP = 2'b11;
@@ -173,6 +113,8 @@ module IR_func(
     end
     else begin 
         if (Write_IR) begin
+            Und_Ins = 1'b1;
+            DP = 2'b11;
             case (M_R_Data[15:12])
                 4'b1111: Und_Ins = 1'b1;
                 default: begin
@@ -232,14 +174,3 @@ module IR_func(
         end
     end
 endmodule
-
-/*
-    always @(negedge clk) begin
-        if (Write_IR) begin 
-            IR = M_R_Data;
-        end
-        if (Rst) begin 
-            IR = 0;
-        end
-    end
-*/
