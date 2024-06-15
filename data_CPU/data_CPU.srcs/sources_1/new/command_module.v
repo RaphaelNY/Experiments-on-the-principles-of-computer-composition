@@ -134,6 +134,7 @@ module justice(
 endmodule
 
 module IR_func(
+        input clk,
         input Write_IR,
         input [27:0] M_R_Data,
         input Rst,
@@ -142,7 +143,7 @@ module IR_func(
         output reg [1:0] DP,
         output reg [3:0] OP, // 24:21
         // output reg [2:0] IR_27_25, // 27:25
-        // output reg S,
+        output reg S,
         output reg [3:0] rn,
         output reg [3:0] rd,
         output reg [3:0] rs,
@@ -155,12 +156,23 @@ module IR_func(
     );
 
     // always @(negedge Write_IR) begin
-    always @(*) begin
+    always @(negedge clk) begin
+    // always @(*) begin
     if (Rst)begin 
         Und_Ins = 1'b1;
+        DP = 2'b11;
+        OP = 4'b1111;
+        S = 1'b0;
+        rn = 4'b1111;
+        rd = 4'b1111;
+        rs = 4'b1111;
+        rm = 4'b1111;
+        type = 2'b11;
+        imm5 = 5'b11111;
+        imm12 = 12'b111111111111;
     end
     else begin 
-        if (Write_IR == 0) begin
+        if (Write_IR) begin
             case (M_R_Data[15:12])
                 4'b1111: Und_Ins = 1'b1;
                 default: begin
@@ -172,7 +184,7 @@ module IR_func(
                                     DP = 2'b00;
                                     // IR_27_25 = M_R_Data[27:25];
                                     OP = M_R_Data[24:21];
-                                    // S = M_R_Data[20];
+                                    S = M_R_Data[20];
                                     rn = M_R_Data[19:16];
                                     rd = M_R_Data[15:12];
                                     imm5 = M_R_Data[11:7];
@@ -180,7 +192,6 @@ module IR_func(
                                     type = M_R_Data[6:5];
                                     // IR_4 = M_R_Data[4];
                                     rm = M_R_Data[3:0];
-                                    
                                 end
                                 1'b1: begin
                                     if (M_R_Data[7] == 1'b0) begin // DP1
@@ -188,7 +199,7 @@ module IR_func(
                                         DP = 2'b01;
                                         // IR_27_25 = M_R_Data[27:25];
                                         OP = M_R_Data[24:21];
-                                        // S = M_R_Data[20];
+                                        S = M_R_Data[20];
                                         rn = M_R_Data[19:16];
                                         rd = M_R_Data[15:12];
                                         rs = M_R_Data[11:8];
@@ -207,7 +218,7 @@ module IR_func(
                             DP = 2'b10;
                             // IR_27_25 = M_R_Data[27:25];
                             OP = M_R_Data[24:21];
-                            // S = M_R_Data[20];
+                            S = M_R_Data[20];
                             rn = M_R_Data[19:16];
                             rd = M_R_Data[15:12];
                             imm12 = M_R_Data[11:0];

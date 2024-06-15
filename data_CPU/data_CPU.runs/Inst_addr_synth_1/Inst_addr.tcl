@@ -88,7 +88,7 @@ set_property ip_output_repo e:/Experiments-on-the-principles-of-computer-composi
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet e:/Experiments-on-the-principles-of-computer-composition/data_CPU/data_CPU.srcs/sources_1/ip/Inst_addr/Inst_addr.xci
+read_ip -quiet E:/Experiments-on-the-principles-of-computer-composition/data_CPU/data_CPU.srcs/sources_1/ip/Inst_addr/Inst_addr.xci
 set_property used_in_implementation false [get_files -all e:/Experiments-on-the-principles-of-computer-composition/data_CPU/data_CPU.gen/sources_1/ip/Inst_addr/Inst_addr_ooc.xdc]
 
 OPTRACE "Adding files" END { }

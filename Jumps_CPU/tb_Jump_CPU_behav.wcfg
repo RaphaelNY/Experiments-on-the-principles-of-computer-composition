@@ -12,133 +12,242 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="124.401 ns"></ZoomEndTime>
-      <Cursor1Time time="0.003 ns"></Cursor1Time>
+      <ZoomEndTime time="375.001 ns"></ZoomEndTime>
+      <Cursor1Time time="270.500 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="244"></NameColumnWidth>
-      <ValueColumnWidth column_width="165"></ValueColumnWidth>
+      <NameColumnWidth column_width="161"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="30" />
+   <WVObjectSize size="14" />
    <wvobject fp_name="/tb_Jump_CPU/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_Jump_CPU/Rst_Heaps" type="logic">
-      <obj_property name="ElementShortName">Rst_Heaps</obj_property>
-      <obj_property name="ObjectShortName">Rst_Heaps</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Jump_CPU/Rst_IR" type="logic">
-      <obj_property name="ElementShortName">Rst_IR</obj_property>
-      <obj_property name="ObjectShortName">Rst_IR</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Jump_CPU/Rst_PC" type="logic">
-      <obj_property name="ElementShortName">Rst_PC</obj_property>
-      <obj_property name="ObjectShortName">Rst_PC</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Jump_CPU/LA" type="logic">
-      <obj_property name="ElementShortName">LA</obj_property>
-      <obj_property name="ObjectShortName">LA</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Jump_CPU/LB" type="logic">
-      <obj_property name="ElementShortName">LB</obj_property>
-      <obj_property name="ObjectShortName">LB</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Jump_CPU/LC" type="logic">
-      <obj_property name="ElementShortName">LC</obj_property>
-      <obj_property name="ObjectShortName">LC</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Jump_CPU/LS" type="logic">
-      <obj_property name="ElementShortName">LS</obj_property>
-      <obj_property name="ObjectShortName">LS</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Jump_CPU/LF" type="logic">
-      <obj_property name="ElementShortName">LF</obj_property>
-      <obj_property name="ObjectShortName">LF</obj_property>
+   <wvobject fp_name="/tb_Jump_CPU/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_Jump_CPU/Und_Ins" type="logic">
       <obj_property name="ElementShortName">Und_Ins</obj_property>
       <obj_property name="ObjectShortName">Und_Ins</obj_property>
    </wvobject>
-   <wvobject fp_name="group13" type="group">
-      <obj_property name="label">ADD</obj_property>
+   <wvobject fp_name="group21" type="group">
+      <obj_property name="label">dut</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/ADD/A" type="array">
-         <obj_property name="ElementShortName">A[31:0]</obj_property>
-         <obj_property name="ObjectShortName">A[31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Addr_A" type="array">
+         <obj_property name="ElementShortName">R_Addr_A[3:0]</obj_property>
+         <obj_property name="ObjectShortName">R_Addr_A[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/ADD/C" type="array">
-         <obj_property name="ElementShortName">C[31:0]</obj_property>
-         <obj_property name="ObjectShortName">C[31:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Addr_B" type="array">
+         <obj_property name="ElementShortName">R_Addr_B[3:0]</obj_property>
+         <obj_property name="ObjectShortName">R_Addr_B[3:0]</obj_property>
       </wvobject>
-   </wvobject>
-   <wvobject fp_name="group19" type="group">
-      <obj_property name="label">R_PC</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/R_PC/clk" type="logic">
-         <obj_property name="ElementShortName">clk</obj_property>
-         <obj_property name="ObjectShortName">clk</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Addr_C" type="array">
+         <obj_property name="ElementShortName">R_Addr_C[3:0]</obj_property>
+         <obj_property name="ObjectShortName">R_Addr_C[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/R_PC/Write_PC" type="logic">
-         <obj_property name="ElementShortName">Write_PC</obj_property>
-         <obj_property name="ObjectShortName">Write_PC</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/Write_Reg" type="logic">
+         <obj_property name="ElementShortName">Write_Reg</obj_property>
+         <obj_property name="ObjectShortName">Write_Reg</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/R_PC/Rst" type="logic">
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/W_Addr" type="array">
+         <obj_property name="ElementShortName">W_Addr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">W_Addr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/W_Data" type="array">
+         <obj_property name="ElementShortName">W_Data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">W_Data[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/clk_" type="logic">
+         <obj_property name="ElementShortName">clk_</obj_property>
+         <obj_property name="ObjectShortName">clk_</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/Rst" type="logic">
          <obj_property name="ElementShortName">Rst</obj_property>
          <obj_property name="ObjectShortName">Rst</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/R_PC/PC_New" type="array">
-         <obj_property name="ElementShortName">PC_New[31:0]</obj_property>
-         <obj_property name="ObjectShortName">PC_New[31:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/LA" type="logic">
+         <obj_property name="ElementShortName">LA</obj_property>
+         <obj_property name="ObjectShortName">LA</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/R_PC/PC" type="array">
-         <obj_property name="ElementShortName">PC[31:0]</obj_property>
-         <obj_property name="ObjectShortName">PC[31:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/LB" type="logic">
+         <obj_property name="ElementShortName">LB</obj_property>
+         <obj_property name="ObjectShortName">LB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/LC" type="logic">
+         <obj_property name="ElementShortName">LC</obj_property>
+         <obj_property name="ObjectShortName">LC</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Data_A" type="array">
+         <obj_property name="ElementShortName">R_Data_A[31:0]</obj_property>
+         <obj_property name="ObjectShortName">R_Data_A[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Data_B" type="array">
+         <obj_property name="ElementShortName">R_Data_B[31:0]</obj_property>
+         <obj_property name="ObjectShortName">R_Data_B[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Data_C" type="array">
+         <obj_property name="ElementShortName">R_Data_C[31:0]</obj_property>
+         <obj_property name="ObjectShortName">R_Data_C[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/i" type="array">
+         <obj_property name="ElementShortName">i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/clk" type="array">
+         <obj_property name="ElementShortName">clk[14:0]</obj_property>
+         <obj_property name="ObjectShortName">clk[14:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R" type="array">
+         <obj_property name="ElementShortName">Q_R[14:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">Q_R[14:0][31:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[14]" type="array">
+            <obj_property name="ElementShortName">[14][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[13]" type="array">
+            <obj_property name="ElementShortName">[13][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[12]" type="array">
+            <obj_property name="ElementShortName">[12][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[11]" type="array">
+            <obj_property name="ElementShortName">[11][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[10]" type="array">
+            <obj_property name="ElementShortName">[10][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[9]" type="array">
+            <obj_property name="ElementShortName">[9][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[8]" type="array">
+            <obj_property name="ElementShortName">[8][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[7]" type="array">
+            <obj_property name="ElementShortName">[7][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[6]" type="array">
+            <obj_property name="ElementShortName">[6][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[5]" type="array">
+            <obj_property name="ElementShortName">[5][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[4]" type="array">
+            <obj_property name="ElementShortName">[4][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[3]" type="array">
+            <obj_property name="ElementShortName">[3][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[2]" type="array">
+            <obj_property name="ElementShortName">[2][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[1]" type="array">
+            <obj_property name="ElementShortName">[1][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[0]" type="array">
+            <obj_property name="ElementShortName">[0][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[14]" type="array">
+            <obj_property name="ElementShortName">[14][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[13]" type="array">
+            <obj_property name="ElementShortName">[13][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[12]" type="array">
+            <obj_property name="ElementShortName">[12][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[11]" type="array">
+            <obj_property name="ElementShortName">[11][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[10]" type="array">
+            <obj_property name="ElementShortName">[10][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[9]" type="array">
+            <obj_property name="ElementShortName">[9][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[8]" type="array">
+            <obj_property name="ElementShortName">[8][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[7]" type="array">
+            <obj_property name="ElementShortName">[7][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[6]" type="array">
+            <obj_property name="ElementShortName">[6][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[5]" type="array">
+            <obj_property name="ElementShortName">[5][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[4]" type="array">
+            <obj_property name="ElementShortName">[4][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[3]" type="array">
+            <obj_property name="ElementShortName">[3][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[2]" type="array">
+            <obj_property name="ElementShortName">[2][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[1]" type="array">
+            <obj_property name="ElementShortName">[1][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R[0]" type="array">
+            <obj_property name="ElementShortName">[0][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+         </wvobject>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group25" type="group">
-      <obj_property name="label">inst_addr</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/inst_addr/clka" type="logic">
-         <obj_property name="ElementShortName">clka</obj_property>
-         <obj_property name="ObjectShortName">clka</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/inst_addr/wea" type="array">
-         <obj_property name="ElementShortName">wea[0:0]</obj_property>
-         <obj_property name="ObjectShortName">wea[0:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/inst_addr/addra" type="array">
-         <obj_property name="ElementShortName">addra[5:0]</obj_property>
-         <obj_property name="ObjectShortName">addra[5:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/inst_addr/dina" type="array">
-         <obj_property name="ElementShortName">dina[31:0]</obj_property>
-         <obj_property name="ObjectShortName">dina[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/inst_addr/douta" type="array">
-         <obj_property name="ElementShortName">douta[31:0]</obj_property>
-         <obj_property name="ObjectShortName">douta[31:0]</obj_property>
-      </wvobject>
+   <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/Next_ST" type="array">
+      <obj_property name="ElementShortName">Next_ST[5:0]</obj_property>
+      <obj_property name="ObjectShortName">Next_ST[5:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="group29" type="group">
-      <obj_property name="label">justice_adder</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/justice_addr/NZCV" type="array">
-         <obj_property name="ElementShortName">NZCV[3:0]</obj_property>
-         <obj_property name="ObjectShortName">NZCV[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/justice_addr/I_a_out" type="array">
-         <obj_property name="ElementShortName">I_a_out[3:0]</obj_property>
-         <obj_property name="ObjectShortName">I_a_out[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/justice_addr/justice_out" type="logic">
-         <obj_property name="ElementShortName">justice_out</obj_property>
-         <obj_property name="ObjectShortName">justice_out</obj_property>
-      </wvobject>
+   <wvobject fp_name="/tb_Jump_CPU/uut/IR_fun/M_R_Data" type="array">
+      <obj_property name="ElementShortName">M_R_Data[27:0]</obj_property>
+      <obj_property name="ObjectShortName">M_R_Data[27:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="group45" type="group">
-      <obj_property name="label">IR_fun</obj_property>
+   <wvobject fp_name="group54" type="group">
+      <obj_property name="label">IR</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/IR_fun/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_Jump_CPU/uut/IR_fun/Write_IR" type="logic">
          <obj_property name="ElementShortName">Write_IR</obj_property>
          <obj_property name="ObjectShortName">Write_IR</obj_property>
@@ -146,6 +255,7 @@
       <wvobject fp_name="/tb_Jump_CPU/uut/IR_fun/M_R_Data" type="array">
          <obj_property name="ElementShortName">M_R_Data[27:0]</obj_property>
          <obj_property name="ObjectShortName">M_R_Data[27:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Jump_CPU/uut/IR_fun/Rst" type="logic">
          <obj_property name="ElementShortName">Rst</obj_property>
@@ -166,6 +276,10 @@
       <wvobject fp_name="/tb_Jump_CPU/uut/IR_fun/OP" type="array">
          <obj_property name="ElementShortName">OP[3:0]</obj_property>
          <obj_property name="ObjectShortName">OP[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/IR_fun/S" type="logic">
+         <obj_property name="ElementShortName">S</obj_property>
+         <obj_property name="ObjectShortName">S</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Jump_CPU/uut/IR_fun/rn" type="array">
          <obj_property name="ElementShortName">rn[3:0]</obj_property>
@@ -198,202 +312,187 @@
       <wvobject fp_name="/tb_Jump_CPU/uut/IR_fun/imm24" type="array">
          <obj_property name="ElementShortName">imm24[23:0]</obj_property>
          <obj_property name="ObjectShortName">imm24[23:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group62" type="group">
-      <obj_property name="label">control mode</obj_property>
+   <wvobject fp_name="group45" type="group">
+      <obj_property name="label">PC</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/DP" type="array">
-         <obj_property name="ElementShortName">DP[1:0]</obj_property>
-         <obj_property name="ObjectShortName">DP[1:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/R_PC/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/BXL" type="array">
-         <obj_property name="ElementShortName">BXL[1:0]</obj_property>
-         <obj_property name="ObjectShortName">BXL[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/OP" type="array">
-         <obj_property name="ElementShortName">OP[3:0]</obj_property>
-         <obj_property name="ObjectShortName">OP[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/type" type="array">
-         <obj_property name="ElementShortName">type[1:0]</obj_property>
-         <obj_property name="ObjectShortName">type[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/justice_out" type="logic">
-         <obj_property name="ElementShortName">justice_out</obj_property>
-         <obj_property name="ObjectShortName">justice_out</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/Write_IR" type="logic">
-         <obj_property name="ElementShortName">Write_IR</obj_property>
-         <obj_property name="ObjectShortName">Write_IR</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/Write_PC" type="logic">
+      <wvobject fp_name="/tb_Jump_CPU/uut/R_PC/Write_PC" type="logic">
          <obj_property name="ElementShortName">Write_PC</obj_property>
          <obj_property name="ObjectShortName">Write_PC</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/Write_Reg" type="logic">
-         <obj_property name="ElementShortName">Write_Reg</obj_property>
-         <obj_property name="ObjectShortName">Write_Reg</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/rm_imm_s" type="logic">
-         <obj_property name="ElementShortName">rm_imm_s</obj_property>
-         <obj_property name="ObjectShortName">rm_imm_s</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/rs_imm_s" type="array">
-         <obj_property name="ElementShortName">rs_imm_s[1:0]</obj_property>
-         <obj_property name="ObjectShortName">rs_imm_s[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/shift_OP" type="array">
-         <obj_property name="ElementShortName">shift_OP[2:0]</obj_property>
-         <obj_property name="ObjectShortName">shift_OP[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/ALU_OP" type="array">
-         <obj_property name="ElementShortName">ALU_OP[3:0]</obj_property>
-         <obj_property name="ObjectShortName">ALU_OP[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/PC_s" type="array">
-         <obj_property name="ElementShortName">PC_s[1:0]</obj_property>
-         <obj_property name="ObjectShortName">PC_s[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/rd_s" type="logic">
-         <obj_property name="ElementShortName">rd_s</obj_property>
-         <obj_property name="ObjectShortName">rd_s</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/ALU_A_s" type="logic">
-         <obj_property name="ElementShortName">ALU_A_s</obj_property>
-         <obj_property name="ObjectShortName">ALU_A_s</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_0/ALU_B_s" type="logic">
-         <obj_property name="ElementShortName">ALU_B_s</obj_property>
-         <obj_property name="ObjectShortName">ALU_B_s</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group81" type="group">
-      <obj_property name="label">dut</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Addr_A" type="array">
-         <obj_property name="ElementShortName">R_Addr_A[3:0]</obj_property>
-         <obj_property name="ObjectShortName">R_Addr_A[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Addr_B" type="array">
-         <obj_property name="ElementShortName">R_Addr_B[3:0]</obj_property>
-         <obj_property name="ObjectShortName">R_Addr_B[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Addr_C" type="array">
-         <obj_property name="ElementShortName">R_Addr_C[3:0]</obj_property>
-         <obj_property name="ObjectShortName">R_Addr_C[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/Write_Reg" type="logic">
-         <obj_property name="ElementShortName">Write_Reg</obj_property>
-         <obj_property name="ObjectShortName">Write_Reg</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/W_Addr" type="array">
-         <obj_property name="ElementShortName">W_Addr[3:0]</obj_property>
-         <obj_property name="ObjectShortName">W_Addr[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/W_Data" type="array">
-         <obj_property name="ElementShortName">W_Data[31:0]</obj_property>
-         <obj_property name="ObjectShortName">W_Data[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/clk_" type="logic">
-         <obj_property name="ElementShortName">clk_</obj_property>
-         <obj_property name="ObjectShortName">clk_</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/Rst" type="logic">
+      <wvobject fp_name="/tb_Jump_CPU/uut/R_PC/Rst" type="logic">
          <obj_property name="ElementShortName">Rst</obj_property>
          <obj_property name="ObjectShortName">Rst</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/LA" type="logic">
+      <wvobject fp_name="/tb_Jump_CPU/uut/R_PC/PC_New" type="array">
+         <obj_property name="ElementShortName">PC_New[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PC_New[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/R_PC/PC" type="array">
+         <obj_property name="ElementShortName">PC[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PC[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group82" type="group">
+      <obj_property name="label">HDL</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/Rst" type="logic">
+         <obj_property name="ElementShortName">Rst</obj_property>
+         <obj_property name="ObjectShortName">Rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/DP" type="array">
+         <obj_property name="ElementShortName">DP[1:0]</obj_property>
+         <obj_property name="ObjectShortName">DP[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/BXL" type="array">
+         <obj_property name="ElementShortName">BXL[1:0]</obj_property>
+         <obj_property name="ObjectShortName">BXL[1:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/S" type="logic">
+         <obj_property name="ElementShortName">S</obj_property>
+         <obj_property name="ObjectShortName">S</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/OP" type="array">
+         <obj_property name="ElementShortName">OP[3:0]</obj_property>
+         <obj_property name="ObjectShortName">OP[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/type" type="array">
+         <obj_property name="ElementShortName">type[1:0]</obj_property>
+         <obj_property name="ObjectShortName">type[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/isCondSatisfy" type="logic">
+         <obj_property name="ElementShortName">isCondSatisfy</obj_property>
+         <obj_property name="ObjectShortName">isCondSatisfy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/Write_IR" type="logic">
+         <obj_property name="ElementShortName">Write_IR</obj_property>
+         <obj_property name="ObjectShortName">Write_IR</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/LA" type="logic">
          <obj_property name="ElementShortName">LA</obj_property>
          <obj_property name="ObjectShortName">LA</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/LB" type="logic">
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/LB" type="logic">
          <obj_property name="ElementShortName">LB</obj_property>
          <obj_property name="ObjectShortName">LB</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/LC" type="logic">
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/LC" type="logic">
          <obj_property name="ElementShortName">LC</obj_property>
          <obj_property name="ObjectShortName">LC</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Data_A" type="array">
-         <obj_property name="ElementShortName">R_Data_A[31:0]</obj_property>
-         <obj_property name="ObjectShortName">R_Data_A[31:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/LS" type="logic">
+         <obj_property name="ElementShortName">LS</obj_property>
+         <obj_property name="ObjectShortName">LS</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Data_B" type="array">
-         <obj_property name="ElementShortName">R_Data_B[31:0]</obj_property>
-         <obj_property name="ObjectShortName">R_Data_B[31:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/LF" type="logic">
+         <obj_property name="ElementShortName">LF</obj_property>
+         <obj_property name="ObjectShortName">LF</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/R_Data_C" type="array">
-         <obj_property name="ElementShortName">R_Data_C[31:0]</obj_property>
-         <obj_property name="ObjectShortName">R_Data_C[31:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/Write_PC" type="logic">
+         <obj_property name="ElementShortName">Write_PC</obj_property>
+         <obj_property name="ObjectShortName">Write_PC</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/i" type="array">
-         <obj_property name="ElementShortName">i[31:0]</obj_property>
-         <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/Write_Reg" type="logic">
+         <obj_property name="ElementShortName">Write_Reg</obj_property>
+         <obj_property name="ObjectShortName">Write_Reg</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/clk" type="array">
-         <obj_property name="ElementShortName">clk[14:0]</obj_property>
-         <obj_property name="ObjectShortName">clk[14:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/rm_imm_s" type="logic">
+         <obj_property name="ElementShortName">rm_imm_s</obj_property>
+         <obj_property name="ObjectShortName">rm_imm_s</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/Q_R" type="array">
-         <obj_property name="ElementShortName">Q_R[14:0][31:0]</obj_property>
-         <obj_property name="ObjectShortName">Q_R[14:0][31:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/rs_imm_s" type="array">
+         <obj_property name="ElementShortName">rs_imm_s[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rs_imm_s[1:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/dut/Decoded_Output" type="array">
-         <obj_property name="ElementShortName">Decoded_Output[15:0]</obj_property>
-         <obj_property name="ObjectShortName">Decoded_Output[15:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group91" type="group">
-      <obj_property name="label">barrelshifter32</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/shift_Data" type="array">
-         <obj_property name="ElementShortName">shift_Data[31:0]</obj_property>
-         <obj_property name="ObjectShortName">shift_Data[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/shift_num" type="array">
-         <obj_property name="ElementShortName">shift_num[7:0]</obj_property>
-         <obj_property name="ObjectShortName">shift_num[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/CF" type="logic">
-         <obj_property name="ElementShortName">CF</obj_property>
-         <obj_property name="ObjectShortName">CF</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/shift_OP" type="array">
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/shift_OP" type="array">
          <obj_property name="ElementShortName">shift_OP[2:0]</obj_property>
          <obj_property name="ObjectShortName">shift_OP[2:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/shift_Result" type="array">
-         <obj_property name="ElementShortName">shift_Result[31:0]</obj_property>
-         <obj_property name="ObjectShortName">shift_Result[31:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/ALU_OP" type="array">
+         <obj_property name="ElementShortName">ALU_OP[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ALU_OP[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/Shift_Carry_out" type="logic">
-         <obj_property name="ElementShortName">Shift_Carry_out</obj_property>
-         <obj_property name="ObjectShortName">Shift_Carry_out</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/PC_s" type="array">
+         <obj_property name="ElementShortName">PC_s[1:0]</obj_property>
+         <obj_property name="ObjectShortName">PC_s[1:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/temp" type="array">
-         <obj_property name="ElementShortName">temp[31:0]</obj_property>
-         <obj_property name="ObjectShortName">temp[31:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/rd_s" type="logic">
+         <obj_property name="ElementShortName">rd_s</obj_property>
+         <obj_property name="ObjectShortName">rd_s</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/result" type="array">
-         <obj_property name="ElementShortName">result[7:0]</obj_property>
-         <obj_property name="ObjectShortName">result[7:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/ALU_A_s" type="logic">
+         <obj_property name="ElementShortName">ALU_A_s</obj_property>
+         <obj_property name="ObjectShortName">ALU_A_s</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/i" type="array">
-         <obj_property name="ElementShortName">i[31:0]</obj_property>
-         <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/ALU_B_s" type="logic">
+         <obj_property name="ElementShortName">ALU_B_s</obj_property>
+         <obj_property name="ObjectShortName">ALU_B_s</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/ST" type="array">
+         <obj_property name="ElementShortName">ST[5:0]</obj_property>
+         <obj_property name="ObjectShortName">ST[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/control_mode_HDL_0/Next_ST" type="array">
+         <obj_property name="ElementShortName">Next_ST[5:0]</obj_property>
+         <obj_property name="ObjectShortName">Next_ST[5:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group107" type="group">
-      <obj_property name="label">ALU</obj_property>
+   <wvobject fp_name="/tb_Jump_CPU/uut/IR_fun/M_R_Data" type="array">
+      <obj_property name="ElementShortName">M_R_Data[27:0]</obj_property>
+      <obj_property name="ObjectShortName">M_R_Data[27:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="group365" type="group">
+      <obj_property name="label">PC_3_1</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/PC_3_1_0/F_in" type="array">
+         <obj_property name="ElementShortName">F_in[31:0]</obj_property>
+         <obj_property name="ObjectShortName">F_in[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/PC_3_1_0/B_in" type="array">
+         <obj_property name="ElementShortName">B_in[31:0]</obj_property>
+         <obj_property name="ObjectShortName">B_in[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/PC_3_1_0/ADD_in" type="array">
+         <obj_property name="ElementShortName">ADD_in[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ADD_in[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/PC_3_1_0/PC_s" type="array">
+         <obj_property name="ElementShortName">PC_s[1:0]</obj_property>
+         <obj_property name="ObjectShortName">PC_s[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/PC_3_1_0/PC_New" type="array">
+         <obj_property name="ElementShortName">PC_New[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PC_New[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group383" type="group">
+      <obj_property name="label">ALIU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_ALU/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_Jump_CPU/uut/u_ALU/A" type="array">
          <obj_property name="ElementShortName">A[31:0]</obj_property>
          <obj_property name="ObjectShortName">A[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Jump_CPU/uut/u_ALU/B" type="array">
          <obj_property name="ElementShortName">B[31:0]</obj_property>
          <obj_property name="ObjectShortName">B[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Jump_CPU/uut/u_ALU/ALU_OP" type="array">
          <obj_property name="ElementShortName">ALU_OP[3:0]</obj_property>
@@ -419,6 +518,10 @@
          <obj_property name="ElementShortName">LF</obj_property>
          <obj_property name="ObjectShortName">LF</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_ALU/Rst" type="logic">
+         <obj_property name="ElementShortName">Rst</obj_property>
+         <obj_property name="ObjectShortName">Rst</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_Jump_CPU/uut/u_ALU/F" type="array">
          <obj_property name="ElementShortName">F[31:0]</obj_property>
          <obj_property name="ObjectShortName">F[31:0]</obj_property>
@@ -431,207 +534,67 @@
          <obj_property name="ElementShortName">Cout</obj_property>
          <obj_property name="ObjectShortName">Cout</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_ALU/fN" type="array">
-         <obj_property name="ElementShortName">fN[31:0]</obj_property>
-         <obj_property name="ObjectShortName">fN[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_ALU/fZ" type="array">
-         <obj_property name="ElementShortName">fZ[31:0]</obj_property>
-         <obj_property name="ObjectShortName">fZ[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_ALU/fC" type="array">
-         <obj_property name="ElementShortName">fC[31:0]</obj_property>
-         <obj_property name="ObjectShortName">fC[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/u_ALU/fV" type="array">
-         <obj_property name="ElementShortName">fV[31:0]</obj_property>
-         <obj_property name="ObjectShortName">fV[31:0]</obj_property>
-      </wvobject>
    </wvobject>
-   <wvobject fp_name="group110" type="group">
-      <wvobject fp_name="/tb_Jump_CPU/uut/imm12_8_32_0/imm12_7_0" type="array">
-         <obj_property name="ElementShortName">imm12_7_0[7:0]</obj_property>
-         <obj_property name="ObjectShortName">imm12_7_0[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/imm12_8_32_0/imm12_7_0_0" type="array">
-         <obj_property name="ElementShortName">imm12_7_0_0[31:0]</obj_property>
-         <obj_property name="ObjectShortName">imm12_7_0_0[31:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group114" type="group">
-      <obj_property name="label">12-4-8</obj_property>
+   <wvobject fp_name="group293" type="group">
+      <obj_property name="label">U_B32</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/imm12_4_8_0/imm12_11_8" type="array">
-         <obj_property name="ElementShortName">imm12_11_8[3:0]</obj_property>
-         <obj_property name="ObjectShortName">imm12_11_8[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/shift_Data" type="array">
+         <obj_property name="ElementShortName">shift_Data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">shift_Data[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/imm12_4_8_0/imm12_11_8_0" type="array">
-         <obj_property name="ElementShortName">imm12_11_8_0[7:0]</obj_property>
-         <obj_property name="ObjectShortName">imm12_11_8_0[7:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/shift_num" type="array">
+         <obj_property name="ElementShortName">shift_num[7:0]</obj_property>
+         <obj_property name="ObjectShortName">shift_num[7:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/imm12_4_8_0/shifted_value" type="array">
-         <obj_property name="ElementShortName">shifted_value[4:0]</obj_property>
-         <obj_property name="ObjectShortName">shifted_value[4:0]</obj_property>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/CF" type="logic">
+         <obj_property name="ElementShortName">CF</obj_property>
+         <obj_property name="ObjectShortName">CF</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/shift_OP" type="array">
+         <obj_property name="ElementShortName">shift_OP[2:0]</obj_property>
+         <obj_property name="ObjectShortName">shift_OP[2:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/Reset" type="logic">
+         <obj_property name="ElementShortName">Reset</obj_property>
+         <obj_property name="ObjectShortName">Reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/shift_Result" type="array">
+         <obj_property name="ElementShortName">shift_Result[31:0]</obj_property>
+         <obj_property name="ObjectShortName">shift_Result[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/Shift_Carry_out" type="logic">
+         <obj_property name="ElementShortName">Shift_Carry_out</obj_property>
+         <obj_property name="ObjectShortName">Shift_Carry_out</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/temp" type="array">
+         <obj_property name="ElementShortName">temp[31:0]</obj_property>
+         <obj_property name="ObjectShortName">temp[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/result" type="array">
+         <obj_property name="ElementShortName">result[7:0]</obj_property>
+         <obj_property name="ObjectShortName">result[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Jump_CPU/uut/u_barrelshifter32/i" type="array">
+         <obj_property name="ElementShortName">i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i[31:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group117" type="group">
-      <obj_property name="label">12-8-32</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/imm12_8_32_0/imm12_7_0" type="array">
-         <obj_property name="ElementShortName">imm12_7_0[7:0]</obj_property>
-         <obj_property name="ObjectShortName">imm12_7_0[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/imm12_8_32_0/imm12_7_0_0" type="array">
-         <obj_property name="ElementShortName">imm12_7_0_0[31:0]</obj_property>
-         <obj_property name="ObjectShortName">imm12_7_0_0[31:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group120" type="group">
-      <obj_property name="label">5-5-8</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/imm5_5_8_0/imm5" type="array">
-         <obj_property name="ElementShortName">imm5[4:0]</obj_property>
-         <obj_property name="ObjectShortName">imm5[4:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/imm5_5_8_0/imm5_0" type="array">
-         <obj_property name="ElementShortName">imm5_0[7:0]</obj_property>
-         <obj_property name="ObjectShortName">imm5_0[7:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group123" type="group">
-      <obj_property name="label">24-24-32</obj_property>
+   <wvobject fp_name="group627" type="group">
+      <obj_property name="label">imm24-32</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/tb_Jump_CPU/uut/imm24_24_32_0/imm24" type="array">
          <obj_property name="ElementShortName">imm24[23:0]</obj_property>
          <obj_property name="ObjectShortName">imm24[23:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Jump_CPU/uut/imm24_24_32_0/imm24_23_0" type="array">
          <obj_property name="ElementShortName">imm24_23_0[31:0]</obj_property>
          <obj_property name="ObjectShortName">imm24_23_0[31:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group128" type="group">
-      <obj_property name="label">s-2-1</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/select_2_1_0/D0" type="array">
-         <obj_property name="ElementShortName">D0[31:0]</obj_property>
-         <obj_property name="ObjectShortName">D0[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/select_2_1_0/D1" type="array">
-         <obj_property name="ElementShortName">D1[31:0]</obj_property>
-         <obj_property name="ObjectShortName">D1[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/select_2_1_0/rm_imm_s" type="logic">
-         <obj_property name="ElementShortName">rm_imm_s</obj_property>
-         <obj_property name="ObjectShortName">rm_imm_s</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/select_2_1_0/F" type="array">
-         <obj_property name="ElementShortName">F[31:0]</obj_property>
-         <obj_property name="ObjectShortName">F[31:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group134" type="group">
-      <obj_property name="label">s-3-1</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/select_3_1_0/D0" type="array">
-         <obj_property name="ElementShortName">D0[7:0]</obj_property>
-         <obj_property name="ObjectShortName">D0[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/select_3_1_0/D1" type="array">
-         <obj_property name="ElementShortName">D1[7:0]</obj_property>
-         <obj_property name="ObjectShortName">D1[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/select_3_1_0/D2" type="array">
-         <obj_property name="ElementShortName">D2[7:0]</obj_property>
-         <obj_property name="ObjectShortName">D2[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/select_3_1_0/rs_imm_s" type="array">
-         <obj_property name="ElementShortName">rs_imm_s[1:0]</obj_property>
-         <obj_property name="ObjectShortName">rs_imm_s[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/select_3_1_0/F" type="array">
-         <obj_property name="ElementShortName">F[7:0]</obj_property>
-         <obj_property name="ObjectShortName">F[7:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group140" type="group">
-      <obj_property name="label">PC-3-1</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/PC_3_1_0/F_in" type="array">
-         <obj_property name="ElementShortName">F_in[31:0]</obj_property>
-         <obj_property name="ObjectShortName">F_in[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/PC_3_1_0/B_in" type="array">
-         <obj_property name="ElementShortName">B_in[31:0]</obj_property>
-         <obj_property name="ObjectShortName">B_in[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/PC_3_1_0/ADD_in" type="array">
-         <obj_property name="ElementShortName">ADD_in[31:0]</obj_property>
-         <obj_property name="ObjectShortName">ADD_in[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/PC_3_1_0/PC_s" type="array">
-         <obj_property name="ElementShortName">PC_s[1:0]</obj_property>
-         <obj_property name="ObjectShortName">PC_s[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/PC_3_1_0/PC_New" type="array">
-         <obj_property name="ElementShortName">PC_New[31:0]</obj_property>
-         <obj_property name="ObjectShortName">PC_New[31:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group145" type="group">
-      <obj_property name="label">A-2-1</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/A_2_1_0/PC_in" type="array">
-         <obj_property name="ElementShortName">PC_in[31:0]</obj_property>
-         <obj_property name="ObjectShortName">PC_in[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/A_2_1_0/A_in" type="array">
-         <obj_property name="ElementShortName">A_in[31:0]</obj_property>
-         <obj_property name="ObjectShortName">A_in[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/A_2_1_0/ALU_A_s" type="logic">
-         <obj_property name="ElementShortName">ALU_A_s</obj_property>
-         <obj_property name="ObjectShortName">ALU_A_s</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/A_2_1_0/A_out" type="array">
-         <obj_property name="ElementShortName">A_out[31:0]</obj_property>
-         <obj_property name="ObjectShortName">A_out[31:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group150" type="group">
-      <obj_property name="label">B-2-1</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/B_2_1_0/shift_result" type="array">
-         <obj_property name="ElementShortName">shift_result[31:0]</obj_property>
-         <obj_property name="ObjectShortName">shift_result[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/B_2_1_0/imm24_23_0" type="array">
-         <obj_property name="ElementShortName">imm24_23_0[31:0]</obj_property>
-         <obj_property name="ObjectShortName">imm24_23_0[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/B_2_1_0/ALU_B_s" type="logic">
-         <obj_property name="ElementShortName">ALU_B_s</obj_property>
-         <obj_property name="ObjectShortName">ALU_B_s</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/B_2_1_0/B_ALU" type="array">
-         <obj_property name="ElementShortName">B_ALU[31:0]</obj_property>
-         <obj_property name="ObjectShortName">B_ALU[31:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group154" type="group">
-      <obj_property name="label">rd-2-1</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_Jump_CPU/uut/rd_2_1_0/rd_in" type="array">
-         <obj_property name="ElementShortName">rd_in[3:0]</obj_property>
-         <obj_property name="ObjectShortName">rd_in[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/rd_2_1_0/rd_s" type="logic">
-         <obj_property name="ElementShortName">rd_s</obj_property>
-         <obj_property name="ObjectShortName">rd_s</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_Jump_CPU/uut/rd_2_1_0/rd_out" type="array">
-         <obj_property name="ElementShortName">rd_out[3:0]</obj_property>
-         <obj_property name="ObjectShortName">rd_out[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

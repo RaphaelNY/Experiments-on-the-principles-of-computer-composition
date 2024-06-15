@@ -75,6 +75,7 @@ module justice(
 endmodule
 
 module IR_func(
+        input clk,
         input Write_IR,
         input [27:0] M_R_Data,
         input Rst,
@@ -84,7 +85,7 @@ module IR_func(
         output reg [1:0] BXL,
         output reg [3:0] OP, // 24:21
         // output reg [2:0] IR_27_25, // 27:25
-        // output reg S,
+        output reg S,
         output reg [3:0] rn,
         output reg [3:0] rd,
         output reg [3:0] rs,
@@ -98,30 +99,41 @@ module IR_func(
     );
 
     // always @(negedge Write_IR) begin
-    always @(*) begin
-    if (Rst)begin 
-        Und_Ins = 1'b1;
-    end
-    else begin 
-        if (Write_IR == 0) begin
+    always @(negedge clk) begin
+        if (Rst)begin 
             Und_Ins = 1'b1;
             DP = 2'b11;
             BXL = 2'b11;
-            case (M_R_Data[27:24])
-                4'b0001: // BX
-                    if (M_R_Data[23:4] == 20'b00101111111111110001) begin
-                        rm = M_R_Data[3:0];
-                        BXL = 2'b00;
-                    end
-                4'b1010:begin // B
+            OP = 4'b1111;
+            S = 1'b0;
+            rn = 4'b1111;
+            rd = 4'b1111;
+            rs = 4'b1111;
+            rm = 4'b1111;
+            type = 2'b11;
+            imm5 = 5'b11111;
+            imm12 = 12'b111111111111;
+            imm24 = 24'b111111111111111111111111;
+        end else begin 
+            if (Write_IR) begin
+                Und_Ins = 1'b1;
+                DP = 2'b11;
+                BXL = 2'b11;
+                // BX
+                if (M_R_Data[27:24] == 4'b0001 && M_R_Data[23:4] == 20'b00101111111111110001) begin
+                    rm = M_R_Data[3:0];
+                    BXL = 2'b00;
+                end else
+                // B
+                if (M_R_Data[27:24] == 4'b1010) begin
                     imm24 = M_R_Data[23:0];
                     BXL = 2'b01;
-                end
-                4'b1011:begin // BL
+                end else
+                // BL
+                if (M_R_Data[27:24] == 4'b1011) begin
                     imm24 = M_R_Data[23:0];
                     BXL = 2'b10;
-                end
-                default: begin
+                end else begin
                     case (M_R_Data[15:12]) // DP
                         4'b1111: Und_Ins = 1'b1;
                         default: begin
@@ -133,7 +145,7 @@ module IR_func(
                                             DP = 2'b00;
                                             // IR_27_25 = M_R_Data[27:25];
                                             OP = M_R_Data[24:21];
-                                            // S = M_R_Data[20];
+                                            S = M_R_Data[20];
                                             rn = M_R_Data[19:16];
                                             rd = M_R_Data[15:12];
                                             imm5 = M_R_Data[11:7];
@@ -149,7 +161,7 @@ module IR_func(
                                                 DP = 2'b01;
                                                 // IR_27_25 = M_R_Data[27:25];
                                                 OP = M_R_Data[24:21];
-                                                // S = M_R_Data[20];
+                                                S = M_R_Data[20];
                                                 rn = M_R_Data[19:16];
                                                 rd = M_R_Data[15:12];
                                                 rs = M_R_Data[11:8];
@@ -168,7 +180,7 @@ module IR_func(
                                     DP = 2'b10;
                                     // IR_27_25 = M_R_Data[27:25];
                                     OP = M_R_Data[24:21];
-                                    // S = M_R_Data[20];
+                                    S = M_R_Data[20];
                                     rn = M_R_Data[19:16];
                                     rd = M_R_Data[15:12];
                                     imm12 = M_R_Data[11:0];
@@ -179,9 +191,8 @@ module IR_func(
                         end
                     endcase
                 end
-            endcase
-                
-        end
+            end    
         end
     end
+
 endmodule

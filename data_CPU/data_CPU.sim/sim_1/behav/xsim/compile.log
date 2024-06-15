@@ -20,6 +20,6 @@ INFO: [VRFC 10-311] analyzing module select_3_1
 INFO: [VRFC 10-311] analyzing module imm12_8_32
 INFO: [VRFC 10-311] analyzing module imm12_4_8
 INFO: [VRFC 10-311] analyzing module imm5_5_8
-INFO: [VRFC 10-311] analyzing module control_mode
+INFO: [VRFC 10-311] analyzing module control_mode_HDL
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/data_CPU/data_CPU.srcs/sim_1/new/tb_data_CPU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_data_CPU

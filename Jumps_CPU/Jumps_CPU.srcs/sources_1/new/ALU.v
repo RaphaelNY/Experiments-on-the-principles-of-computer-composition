@@ -21,6 +21,7 @@
 
 
 module ALU(
+    input clk,
     input [31:0] A,
     input [31:0] B, // shift_out
     input [3:0] ALU_OP,
@@ -29,6 +30,7 @@ module ALU(
     input shiftCout, // shift carry out
     input NZCV_S,
     input LF,
+    input Rst, // reset
     output reg [31:0] F,
     output reg [3:0] NZCV
     );
@@ -36,9 +38,13 @@ module ALU(
     reg Cout;
     localparam fN=3,fZ=2,fC=1,fV=0;
 
-    always @(negedge LF)
+    // always @(negedge LF)
+    always @(*)
     begin
-        if (LF == 1'b0) begin
+        if (Rst) begin
+            F <= 32'h0;
+            Cout <= 1'b0;
+        end else if (LF) begin
             case (ALU_OP)
                 4'h0:F<=A&B;
                 4'h1:F<=A^B;
@@ -59,9 +65,11 @@ module ALU(
     end
 
     // always @(negedge NZCV_S)
-    always @(*)
+    always @(negedge clk)
     begin
-        //if(NZCV_S == 1'b0) begin
+        if (Rst) begin
+            NZCV <= 4'b0;
+        end else if(NZCV_S) begin
             NZCV[fN]=F[31];
             NZCV[fZ]=(F==32'h0)?1'b1:1'b0;
             
@@ -77,6 +85,6 @@ module ALU(
                     NZCV[fV]=A[31]^B[31]^F[31]^Cout;
                 end
             endcase
-        //end
+        end
     end
 endmodule

@@ -50,7 +50,7 @@ module Universal_Register_Heap_one(
         .Decoded_Output(clk)
     );
 
-    Register R0 (.clk(clk[0]), .Rst(Rst), .D(W_Data), .Q(Q_R[0]));
+    Register R0 (.clk(clk[0]), .Rst(1), .D(W_Data), .Q(Q_R[0]));
     Register R1 (.clk(clk[1]), .Rst(Rst), .D(W_Data), .Q(Q_R[1]));
     Register R2 (.clk(clk[2]), .Rst(Rst), .D(W_Data), .Q(Q_R[2]));
     Register R3 (.clk(clk[3]), .Rst(Rst), .D(W_Data), .Q(Q_R[3]));
@@ -68,20 +68,26 @@ module Universal_Register_Heap_one(
     
     // assign clk = clk_ & Decoded_Output & Write_Reg;
 
-    always @(negedge LA) begin
-        if (LA == 1'b0) begin       
+    // always @(negedge LA) begin
+    always @(negedge clk_) begin
+    // always @(*) begin
+        if (LA) begin       
             R_Data_A <= Q_R[R_Addr_A];
         end
     end
     
-    always @(negedge LB) begin
-        if (LB == 1'b0) begin
+    // always @(negedge LB) begin
+    always @(negedge clk_) begin
+    // always @(*) begin
+        if (LB) begin
             R_Data_B <= Q_R[R_Addr_B];
         end
     end
     
-    always @(negedge LC) begin
-        if (LC == 1'b0) begin
+    // always @(negedge LC) begin
+    always @(negedge clk_) begin
+    // always @(*) begin
+        if (LC) begin
             R_Data_C <= Q_R[R_Addr_C];
         end
     end
@@ -96,7 +102,7 @@ module Decoder_4to16 (
 
     always @(*) begin
         Decoded_Output = 15'b0;
-        Decoded_Output[W_Addr] = clk & 1'b1 & Write_Reg;        
+        Decoded_Output[W_Addr] = !clk & 1'b1 & Write_Reg;        
         end
 endmodule
 
@@ -107,7 +113,8 @@ module Register (
         output reg [31:0] Q
     );
 
-    always @(posedge clk) begin
+    // always @(Rst or posedge clk) begin
+    always @(Rst or negedge clk) begin
         Q <= D;
         if (Rst) begin
             Q <= 32'b0;
