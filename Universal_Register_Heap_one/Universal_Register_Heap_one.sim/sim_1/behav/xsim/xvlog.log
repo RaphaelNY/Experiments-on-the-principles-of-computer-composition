@@ -1,6 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/Universal_Register_Heap_one/Universal_Register_Heap_one.srcs/sources_1/new/Universal_Register_Heap_one.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Universal_Register_Heap_one
-INFO: [VRFC 10-311] analyzing module Decoder_4to16
-INFO: [VRFC 10-311] analyzing module Register
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/Universal_Register_Heap_one/Universal_Register_Heap_one.srcs/sim_1/new/Universal_Register_Heap_one_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Universal_Register_Heap_one_tb
