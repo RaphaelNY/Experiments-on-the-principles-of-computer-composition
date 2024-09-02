@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/Register_mem/Register_mem.gen/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module blk_mem_gen_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Experiments-on-the-principles-of-computer-composition/Register_mem/Register_mem.srcs/sim_1/new/Test_Mem_desn.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Test_Mem
